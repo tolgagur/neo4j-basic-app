@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        ul { list-style-type:none; }
+        .film_ayarlari {
+            height: 250px;
+            width: 1220px;
+        }
+    
+        .oyuncu_ayarlari {
+            width: 1220px;
+            height: 200px;
+        }
+    
+        .ozellikler_field{
+            width: 1220px;
+    
+        }
+    
+        .submit {
+            height: 45px;
+            width: 290px;
+            background: rgb(27, 197, 140);
+            left: 392px;
+            top: 220px;
+            position: absolute;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+        }
+    
+        .submit:hover {
+            background: rgba(25, 224, 7, 0.979);
+        }
+    
+        .yonetmen_button {
+            height: 45px;
+            width: 290px;
+            background: rgb(27, 197, 140);
+            left: 392px;
+            top: 444px;
+            border-radius: 5px;
+            border: none;
+            position: absolute;
+            font-size: 18px;
+        }
+    
+        .yonetmen_button:hover {
+            background: rgba(25, 224, 7, 0.979);
+        }
+    
+        .oyuncu_button {
+            height: 45px;
+            width: 290px;
+            background: rgb(27, 197, 140);
+            left: 392px;
+            top: 680px;
+            border-radius: 5px;
+            border: none;
+            position: absolute;
+            font-size: 18px;
+        }
+    
+        .oyuncu_button:hover {
+            background: rgba(25, 224, 7, 0.979);
+        }
+    
+        .sil_button {
+            border: none;
+            background: rgb(27, 197, 140);
+            height: 20px;
+            width: 40px;
+            border-radius: 5px;
+        }
+    
+        .sil_button:hover {
+            background: rgba(25, 224, 7, 0.979);
+        }
+    
+        .guncel_button {
+            border: none;
+            background: rgb(27, 197, 140);
+            height: 20px;
+            width: 80px;
+            border-radius: 5px;
+        }
+    
+        .guncel_button:hover {
+            background: rgba(25, 224, 7, 0.979);
+        }
+    
+        .ara_button{
+            border: none;
+            background: rgb(27, 197, 140);
+            height: 20px;
+            width: 35px;
+            border-radius: 5px;
+        }
+        .ara_button:hover{
+            background: rgba(25, 224, 7, 0.979);
+        }
+    
+    
+    </style>
+
+  
+
+</head>
+<body>
+    <fieldset>
+        <legend>Silme</legend>
+        <form method="POST" action="/movie/sil">
+            <label>silinecek film</label>
+            <br>
+            <input type="text" name="title">
+            
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <form method="POST" action="/actor/sil">
+            <label>silinecek aktor</label>
+            <br>
+            <input type="text" name="name">
+            
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </fieldset>
+
+    <fieldset>
+            <legend>guncelle</legend>
+            <form method="POST" action="/movie/guncelle">
+                <br>
+                <input type="text" name="title">
+                <input type="text" name="title2">
+                
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+    </fieldset>
+    
+
+
+<fieldset>
+        <legend>Ekleme işlemleri</legend>
+
+
+<table>
+<tr>
+<td>
+<fieldset>
+        <legend>Film ekle</legend>
+        <form method="post" action="/movie/add">
+            <label>Filmin Adı</label>
+            <br>
+            <input type="text" name="title">
+            <br>
+            <label>Year</label>
+            <br>
+            <input type="text" name="year">
+            <br>
+            <label>Imdb Puanı</label>
+            <br>
+            <input type="text" name="imdb">
+            <br>
+            <label>Dil</label>
+            <br>
+            <input type="text" name="language">
+            <br>
+            <label>Hakkında</label>
+            <br>
+            <input type="text" name="about">
+            <br>
+            <input type="submit" value="Gönder">
+        </form>
+</fieldset>
+</td>
+<td>
+<fieldset>
+        <legend>Aktor ekle</legend>
+<form method="post" action="/actor/add">
+    <label>Adı</label>
+    <br>
+    <input type="text" name="name">
+    <br>
+    <label>Yaşı</label>
+    <br>
+    <input type="text" name="age">
+    <br>
+    <label>Dogum yeri</label>
+    <br>
+    <input type="text" name="birthplace">
+    <br>
+    <label>Hakkında</label><br>
+    <input type="text" name="about">
+    <br>
+    <input type="submit" value="Gönder">
+</form>
+</fieldset>
+</td>
+<td>
+<fieldset>
+        <legend>Yonetmen ekle</legend>
+    <form method="post" action="/yonetmen/add">
+        <label>Adı</label><br>
+        <input type="text" name="name">
+        <br>
+        <label>Yaşı</label><br>
+        <input type="text" name="age">
+        <br>
+        <label>Doğum Yeri</label><br>
+        <input type="text" name="birthplace">
+        <br>
+        <label>Hakkında</label><br>
+        <input type="text" name="about">
+        <br>
+        <input type="submit" value="Gönder">
+
+    </form> 
+</fieldset>
+</td>
+<td>
+<fieldset>
+        <legend>Tür ekle</legend>
+        <form method="post" action="/type/add">       
+        <input type="text" name="name">
+                
+        <br>
+        <input type="submit" value="Gönder">
+        </form> 
+</fieldset>
+</td>       
+ </tr>
+</table>
+</fieldset>
+
+<fieldset>
+    <legend>Bağlantı İşlemleri</legend>
+    <table>
+        <tr>
+        <td>
+            <fieldset>
+                <legend>Hangi Aktor Hangi Filmde Oynadı?</legend>
+              
+                <form method="post" action="/movie/actor/add">
+                    <label>Film İsmi</label>
+                    <br>
+                    <input type="text" name="title">
+                    <br>
+                    <label>Aktor İsmi</label>
+                    <br>
+                    <input type="text" name="name">
+                    <br>
+                    <input type="submit" value="Gönder">
+                
+                </form>
+            </fieldset>
+        </td>
+        <td>
+                <fieldset>
+                        <legend>Film tür ilişkisi</legend>
+                <h3></h3>
+                <form method="post" action="/Type/Movie/add">
+                    <label>Tür</label><br>
+                    <input type="text" name="name">
+                    <br>
+                    <label>Film</label><br>
+                    <input type="text" name="title">
+                    <br>
+                    <input type="submit" value="Gönder">
+                
+                </form>
+            </fieldset>
+        </td>
+        <td>
+                <fieldset>
+                        <legend>yönetmen film iliskisi</legend>
+                
+                <form method="post" action="/yonetmen/Movie/add">
+                    <label>Yönetmen</label><br>
+                    <input type="text" name="name">
+                    <br>
+                    <label>Film</label><br>
+                    <input type="text" name="title">
+                    <br>
+                    <input type="submit" value="Gönder">
+                </form>
+            </fieldset>
+            
+        </td>
+        </tr>
+
+    </table>
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Filmler</h3>
+<ul>
+<% Movie.forEach(function(movie){ %>
+    <li><b>Filmin Adı:</b> <%= movie.title %> </li>
+    <li><b>Imdb Puanı:</b> <%= movie.imdb %> </li>
+    <li><b>Gösterim Yılı:</b> <%= movie.year %></li>
+    <li><b>Hakkında:</b> <%= movie.about %></li>
+    <br>
+  
+<% }) %>
+</ul>
+
+<h3>Aktörler</h3>
+<ul>
+<% Actor.forEach(function(actor){ %>
+     
+    <li><b>Aktor Adı:</b><%= actor.name %></li>
+     
+    <li><b>Yaş:</b> <%= actor.age %> </li>
+    <li><b>Doğum yeri:</b> <%= actor.birthplace %></li>
+    <br>
+<%}) %>
+</ul>
+<h3>Yönetmenler</h3>
+ 
+<ul>
+<% Yonetmen.forEach(function(yonetmen){ %>
+    <li><b>Yonetmen Adı:</b><%= yonetmen.name %></li>
+     
+    <li><b>Yaş:</b> <%= yonetmen.age %> </li>
+    <li><b>Doğum yeri:</b> <%= yonetmen.birthplace %></li>
+    <li><b>Hakkında:</b> <%= yonetmen.about %></li>
+    <br>
+
+<% }) %>
+</ul>
+
+
+</body>
+</html>
